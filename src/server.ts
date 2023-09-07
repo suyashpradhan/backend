@@ -2,18 +2,18 @@
 
 const express = require('express');
 require('dotenv/config');
+const bodyParser = require('body-parser');
+const postsRoutes = require('./routes/posts');
 
 const app = express();
+app.use(bodyParser.json());
 
 app.get('/', (_, res) => {
 	res.status(200);
-	res.send('hello world!');
+	res.json({ data: 'hello world' });
 });
 
-app.get('/info', (_, res) => {
-	res.status(200);
-	res.json({ message: 'Info Route' });
-});
+app.use('/posts', postsRoutes);
 
 app.listen(4000, () => {
 	console.log('Server on port 4000');

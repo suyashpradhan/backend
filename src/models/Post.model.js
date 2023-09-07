@@ -8,5 +8,6 @@ const PostSchema = mongoose.Schema({
 		required: true,
 	},
 	description: String,
-	date: Date.now(),
 });
+
+module.exports = mongoose.model('Posts', PostSchema);

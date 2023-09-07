@@ -1,9 +1,12 @@
 /** @format */
 
 import { Router } from 'express';
+const Post = require('../models/Post.model');
 
 const router = Router();
 
-router.get();
+router.post('/', (req, res) => {
+	console.log(req);
+});
 
 module.exports = router;
