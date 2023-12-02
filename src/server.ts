@@ -13,8 +13,6 @@ app.get('/', (_, res) => {
 	res.json({ data: 'hello world' });
 });
 
-app.use('/posts', postsRoutes);
-
 app.listen(4000, () => {
 	console.log('Server on port 4000');
 });
